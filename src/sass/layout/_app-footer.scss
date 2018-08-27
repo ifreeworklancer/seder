@@ -1,0 +1,96 @@
+#app-footer {
+    padding-top: 80px;
+    background: url('../images/bg/footer-bg.png.jpg') 50% 50% / cover no-repeat;
+
+    .footer-copyr {
+        border-top: 1px solid #425468;
+        padding: 20px 0;
+        color: #8a9cb2;
+    }
+}
+
+.footer-contacts {
+
+    &-logo {
+        width: 165px;
+        height: 90px;
+    }
+
+    &-item {
+
+        .footer-social-list {
+            
+            &-item {
+                opacity: .6;
+                transition: .5s;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &__title {
+            font-size: 18px;
+            color: #b2e9f7;
+        }
+    }
+}
+
+#form-feedback {
+
+    .form-group {
+        margin-bottom: 40px;
+        padding-bottom: 5px;
+
+
+        @media (max-width: 1300px) {
+            margin-bottom: 20px;
+        }
+
+        &:last-of-type {
+            margin-bottom: 30px;
+        }
+
+        &.in-focus {
+
+            .label-placeholder {
+                font-size: 14px;
+                bottom: 100%;
+                color: #fff;
+
+                @media (max-width: 1300px) {
+                    bottom: 80%;
+                }
+            }
+
+            .form-control {
+                border-color: #fff;
+            }
+        }
+
+        .label-placeholder {
+            font-size: 16px;
+            color: #b2e9f7;
+            left: 25px;
+            bottom: 10%;
+            transition: linear .3s;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 20px 15px 20px 25px;
+            background: transparent;
+            border: 1px solid #b2e9f7;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        &--textarea {
+
+            .label-placeholder {
+                bottom: 50%;
+            }
+        }
+    }
+}

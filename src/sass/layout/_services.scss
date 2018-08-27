@@ -1,0 +1,129 @@
+#services {
+    padding-top: 50px;
+    padding-bottom: 100px;
+    
+    .btn-outline-primary {
+        font-size: 12px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -150px;
+        left: 0;
+        right: 0;
+        bottom: -200px;
+        min-height: 1590px;
+        background: url('../images/bg/services-bg.png') 50% 50% / cover no-repeat;
+        z-index: -1000;
+    }
+}
+
+.services-row {
+
+    &--mt {
+        margin-top: 2px;
+    }
+}
+.services-item {
+    margin: 0 2px;
+    height: 410px;
+    padding: 290px 0 60px 80px;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: inset 0px 0px 178px 19px rgba(51,51,51,0);
+    overflow: hidden;
+    transition: .5s;
+
+    @media (max-width: map_get($grid-breakpoints, sm)) {
+        height: auto;
+        width: 100%;
+        padding: 230px 0 40px 20px;
+        margin: 2px 0;
+    }
+
+    .services-item-decoration {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 180px;
+        opacity: 0;
+        transition: linear .3s;
+        overflow: hidden;
+
+        .wave {
+            background: url('../images/icon/wave.svg') repeat-x; 
+            top: 0;
+            bottom: 0;
+            width: 6400px;
+            height: 180px;
+            animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+            transform: translate3d(0, 0, 0);
+            z-index: 5;
+        }
+        
+        .wave:nth-of-type(2) {
+          top: 10px;
+          bottom: 0;
+          animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+          opacity: 1;
+          z-index: 5;
+        }
+        
+        @keyframes wave {
+          0% {
+            margin-left: 0;
+          }
+          100% {
+            margin-left: -1600px;
+          }
+        }
+        
+        @keyframes swell {
+          0%, 100% {
+            transform: translate3d(0,-25px,0);
+          }
+          50% {
+            transform: translate3d(0,5px,0);
+          }
+        }
+
+        &__text {
+            right: 100px;
+            bottom: 30px;
+            z-index: 10;
+            color: #a3daf7;
+            transition: .5s;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+
+    &__link {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+    }
+
+    &__title {
+        z-index: 10;
+    }
+
+    &--center {
+        margin: 0;
+    }
+
+    &:hover {
+        box-shadow: inset 0px 0px 178px 19px rgba(51,51,51,1);
+
+
+        .services-item-decoration {
+            opacity: 1;
+        }
+    }
+}

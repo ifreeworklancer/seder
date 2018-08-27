@@ -1,0 +1,79 @@
+#header-banner {
+    height: 100vh;
+    min-height: 480px;
+    max-height: 900px;
+    background-image: linear-gradient( 90deg, rgb(178,204,233) 0%, rgb(255,255,255) 73%);  
+
+    @media (max-width: map_get($grid-breakpoints, sm)) {
+       height: auto;
+       padding-bottom: 150px;
+    }
+
+    .scroll-down {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 60px;
+        z-index: 10;
+
+        
+    @media (max-width: map_get($grid-breakpoints, sm)) {
+        bottom: 40px;
+    }
+
+        &-icon {
+            width: 20px;
+            height: 35px;
+            border-radius: 10px;
+            border: 1px solid #1b3655;
+            
+            &__line {  
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 2px;
+                height: 15px;
+                display: block;
+                background: linear-gradient(to top, rgba(#1b3655, 1) 0%, rgba(#1b3655, 0) 100%);
+                background-position: 0 -10px;
+                background-size: 100% 200%;
+                animation: scrollDown 2.2s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite;
+                
+                @keyframes scrollDown {
+                    0% {
+                        background-position: 0 -10px;
+                    }
+                    75% {
+                        background-position: 0 0;
+                    }
+                    100% {
+                        background-position: 0 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header-banner-item {
+    width: 100%;
+    max-width: 600px;
+    z-index: 10;
+}
+
+.header-banner-elena-img {
+    top: 0;
+    right: 0;
+    bottom: 40px;
+
+    img {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.header-banner-elena-description {
+    right: 5%;
+    bottom: 170px;
+    transform: rotate(-90deg);
+    color: #8d9195;
+}

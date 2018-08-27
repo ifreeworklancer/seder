@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Seder</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Cuprum|Oswald:400,700|PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="dist/app.css">
+</head>
+
+<body class="position-relative">
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+
+        <symbol id="mobile-icon" viewBox="0 0 512 512">
+            <path d="M368,0H144c-26.4,0-48,21.6-48,48v416c0,26.4,21.6,48,48,48h224c26.4,0,48-21.6,48-48V48C416,21.6,394.4,0,368,0z M192,24 
+                h128v16H192V24z M256,480c-17.673,0-32-14.327-32-32s14.327-32,32-32s32,14.327,32,32S273.673,480,256,480z M384,384H128V64h256 
+                V384z" fill="#8f8f8f" />
+        </symbol>
+
+        <symbol id="video-icon" viewBox="0 0 310 310">
+            <path d="M297.917,64.645c-11.19-13.302-31.85-18.728-71.306-18.728H83.386c-40.359,0-61.369,5.776-72.517,19.938   C0,79.663,0,100.008,0,128.166v53.669c0,54.551,12.896,82.248,83.386,82.248h143.226c34.216,0,53.176-4.788,65.442-16.527   C304.633,235.518,310,215.863,310,181.835v-53.669C310,98.471,309.159,78.006,297.917,64.645z M199.021,162.41l-65.038,33.991   c-1.454,0.76-3.044,1.137-4.632,1.137c-1.798,0-3.592-0.484-5.181-1.446c-2.992-1.813-4.819-5.056-4.819-8.554v-67.764   c0-3.492,1.822-6.732,4.808-8.546c2.987-1.814,6.702-1.938,9.801-0.328l65.038,33.772c3.309,1.718,5.387,5.134,5.392,8.861   C204.394,157.263,202.325,160.684,199.021,162.41z"
+                fill="#FFFFFF" />
+        </symbol>
+
+        <symbol id="arrow-icon" viewBox="0 0 32.635 32.635">
+            <path fill="#406ea2" d="M32.135,16.817H0.5c-0.276,0-0.5-0.224-0.5-0.5s0.224-0.5,0.5-0.5h31.635c0.276,0,0.5,0.224,0.5,0.5
+		S32.411,16.817,32.135,16.817z" />
+            <path fill="#406ea2" d="M19.598,29.353c-0.128,0-0.256-0.049-0.354-0.146c-0.195-0.195-0.195-0.512,0-0.707l12.184-12.184L19.244,4.136
+		c-0.195-0.195-0.195-0.512,0-0.707s0.512-0.195,0.707,0l12.537,12.533c0.094,0.094,0.146,0.221,0.146,0.354
+		s-0.053,0.26-0.146,0.354L19.951,29.206C19.854,29.304,19.726,29.353,19.598,29.353z" />
+        </symbol>
+
+
+        <symbol id="facebook-icon" viewBox="0 0 448 512">
+            <path fill="#a1c6f4" d="M448 80v352c0 26.5-21.5 48-48 48h-85.3V302.8h60.6l8.7-67.6h-69.3V192c0-19.6 5.4-32.9 33.5-32.9H384V98.7c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9H184v67.6h60.9V480H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48z"></path>
+        </symbol>
+
+        <symbol id="instagram-icon" viewBox="0 0 448 512">
+            <path fill="#a1c6f4" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+        </symbol>
+
+
+        <symbol id="youtube-icon" viewBox="0 0 448 512">
+            <path fill="#a1c6f4" d="M186.8 202.1l95.2 54.1-95.2 54.1V202.1zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-42 176.3s0-59.6-7.6-88.2c-4.2-15.8-16.5-28.2-32.2-32.4C337.9 128 224 128 224 128s-113.9 0-142.2 7.7c-15.7 4.2-28 16.6-32.2 32.4-7.6 28.5-7.6 88.2-7.6 88.2s0 59.6 7.6 88.2c4.2 15.8 16.5 27.7 32.2 31.9C110.1 384 224 384 224 384s113.9 0 142.2-7.7c15.7-4.2 28-16.1 32.2-31.9 7.6-28.5 7.6-88.1 7.6-88.1z"></path>
+        </symbol>
+
+    </svg>
+
+    <header id="app-header">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="col-auto px-0 px-sm-3">
+                <a href="#" class="logo">
+                    <img src="images/icon/logo-icon.png" alt="logo">
+                </a>
+            </div>
+            <div class="col position-static d-flex justify-content-end align-items-center">
+                <div class="contacts mr-2 mr-sm-5 text-right">
+                    <a href="#" class="phone">+3 (050) 123 45 67</a>
+                    <div class="feedback-header">
+                        <svg width="15" height="20">
+                            <use xlink:href="#mobile-icon"></use>
+                        </svg>
+                        <a href="#" class="feedback-header__text pb-1">Свяжитесь с нами</a>
+                    </div>
+                </div>
+                <div class="burger-menu position-relative d-flex flex-column justify-content-center align-items-center">
+                    <div class="line line--top"></div>
+                    <div class="line line--middle"></div>
+                    <div class="line line--bottom"></div>
+                </div>
+                <div class="menu-nav position-absolute">
+                    <ul class="menu-nav-list list-unstyled">
+                        <li class="menu-nav-list-item">
+                            <a href="#patients" class="menu-nav-list-item__link scroll-link">Кому мы помагаем?</a>
+                        </li>
+                        <li class="menu-nav-list-item">
+                            <a href="#how-we-work" class="menu-nav-list-item__link scroll-link">Как мы работаем?</a>
+                        </li>
+                        <li class="menu-nav-list-item" id="open-list">
+                            <a href="#" class="menu-nav-list-item__link scroll-link position-relative">Наши услуги
+                                <div class="triangle position-absolute"></div>
+                            </a>
+                            <ul class="menu-nav-inList list-unstyled pl-4">
+                                <li class="menu-nav-inList-item mt-4">
+                                    <a href="#" class="menu-nav-inList-item__link scroll-link">Реабелитационные услуги</a>
+                                </li>
+                                <li class="menu-nav-inList-item">
+                                    <a href="#" class="menu-nav-inList-item__link scroll-link">Юридические консультации</a>
+                                </li>
+                                <li class="menu-nav-inList-item">
+                                    <a href="#" class="menu-nav-inList-item__link scroll-link">Консультации по специальному оборудованию</a>
+                                </li>
+                                <li class="menu-nav-inList-item">
+                                    <a href="#" class="menu-nav-inList-item__link scroll-link">Услуги клининговой компании</a>
+                                </li>
+                                <li class="menu-nav-inList-item">
+                                    <a href="#" class="menu-nav-inList-item__link scroll-link">Бытовые услуги</a>
+                                </li>
+                                <li class="menu-nav-inList-item mb-0">
+                                    <a href="#" class="menu-nav-inList-item__link scroll-link">Маникюр, педикюр</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-nav-list-item">
+                            <a href="#reviews" class="menu-nav-list-item__link scroll-link">Отзывы</a>
+                        </li>
+                        <li class="menu-nav-list-item">
+                            <a href="#app-footer" class="menu-nav-list-item__link scroll-link">Напишите нам</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="header-banner">
+            <div class="container h-100 d-flex justify-content-start align-items-center">
+                <div class="col">
+                    <div class="header-banner-item position-relative">
+                        <h1 class="header-banner-item__title mb-4">Самое важное лекарство — это нежная
+                            <span class="text-primary">любовь и забота</span>
+                        </h1>
+                        <p class="header-banner-item__description">
+                            Наше агентство предлагает услуги по уходу за пожелыми людьми на дому и в больнице. Каждый наш работник - это профессиональный
+                            специалист, прошедший проверку в агентстве, имеет рекомендации.
+                        </p>
+                        <a href="#" class="btn btn-primary mt-5">свяжитесь с нами</a>
+                    </div>
+                </div>
+
+                <div class="scroll-down position-absolute d-flex flex-column justify-content-center align-items-center">
+                    <div class="scroll-down-icon mb-2 position-relative">
+                        <div class="scroll-down-icon__line position-absolute"></div>
+                    </div>
+                    <div class="scroll-down__text">скролл вниз</div>
+                </div>
+                <div class="header-banner-elena-img position-absolute d-none d-lg-block">
+                    <img src="images/content/header-banner/header-banner-elena.png" alt="Елена Валерьева">
+                </div>
+                <div class="header-banner-elena-description position-absolute d-none d-lg-block">
+                    <p class="header-banner-elena-description__name mb-0">Елена Валерьева</p>
+                    <p class="header-banner-elena-description__position">кандидат медицинских наук</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="patients">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="patients-item">
+                            <h2 class="section-title mb-5">Кому мы
+                                <span class="text-primary">помогаем?</span>
+                            </h2>
+                            <p class="mb-3">Частное предприятие «Сэдэр». Организация с руководителем, менеджером и 20 сотрудниками, непосредственно
+                                осуществляющими уход за пожилыми людьми, нуждающимися в посторонней помощи.</p>
+                            <p> Весь комплекс услуг позволяет пожилым людям качественно жизнь, несмотря на физически, психологически,
+                                экономически, морально изменившуюся ситуацию.</p>
+
+                            <h3 class="patients-item-title pb-3 ml-lg-5 mt-5 position-relative">
+                                Люди в пожилом возрасте
+                                <div class="patients-item-title-decoration patients-item-title-decoration--right position-absolute bg-primary">
+                                    <div class="patients-item-title-decoration__circle position-absolute bg-primary"></div>
+                                </div>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-4 p px-lg-0 ml-0 ml-lg-5">
+                        <div class="patients-item-img patients-item-img--right" style="background-image: url('images/content/patients/patitents-item-1.jpg');"></div>
+                    </div>
+                </div>
+                <div class="row position-relative mt-5">
+                    <div class="patients-item__decoration-bg position-absolute"></div>
+                    <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                        <div class="patients-item-img patients-item-img--left" style="background-image: url('images/content/patients/patitents-item-2.jpg');"></div>
+                    </div>
+                    <div class="col-lg-5 order-1 order-lg-2">
+                        <div class="patients-item d-flex justify-content-center align-items-end">
+                            <h3 class="patients-item-title pb-3 position-relative">
+                                Пациенты после травм
+                                <div class="patients-item-title-decoration patients-item-title-decoration--left position-absolute bg-primary">
+                                    <div class="patients-item-title-decoration__circle position-absolute bg-primary"></div>
+                                </div>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-auto">
+                        <div class="patients-item d-flex justify-content-start align-items-end">
+                            <h3 class="patients-item-title pb-3 position-relative">
+                                Больные требующие постоянного ухода
+                                <div class="patients-item-title-decoration patients-item-title-decoration--right position-absolute bg-primary">
+                                    <div class="patients-item-title-decoration__circle position-absolute bg-primary"></div>
+                                </div>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-3 mt-lg-0">
+                        <div class="patients-item-img patients-item-img--right" style="background-image: url('images/content/patients/patitents-item-3.jpg');"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-we-work">
+            <div class="container">
+                <div class="how-we-work-item d-flex justify-content-end align-items-start position-relative">
+                    <div class="how-we-work-item__video position-absolute" style="background-image: url('images/content/how-we-work/how-we-work.jpg');"></div>
+                    <h3 class="how-we-work-item__title text-white">Как мы работаем?</h3>
+                    <div class="play-video position-absolute d-flex flex-column align-items-center">
+                        <div class="play-video__text text-white font-weight-normal mb-2">включить видео</div>
+                        <div class="play-video__icon">
+                            <svg width="55" height="40">
+                                <use xlink:href="#video-icon"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="how-we-work-item__description position-absolute">смотреть видео</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container mb-5">
+                <h2 class="section-title pl-2 pl-sm-0">Наши услуги</h2>
+            </div>
+            <div class="container-fluid p-0">
+                <div class="services-row d-flex flex-wrap">
+                    <div class="col-sm-4 p-0">
+                        <div class="services-item position-relative" style="background-image: url('images/content/services/services-item-1.jpg');">
+                            <a href="#" class="services-item__link position-absolute"></a>
+                            <h3 class="services-item__title position-relative text-white">Реабилитационные услуги</h3>
+                            <div class="services-item-decoration position-absolute">
+                                <a href="#" class="services-item-decoration__text position-absolute">Подробнее</a>
+                                <div class="wave position-absolute"></div>
+                                <div class="wave position-absolute"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 p-0">
+                        <div class="services-item services-item--center position-relative" style="background-image: url('images/content/services/services-item-2.jpg');">
+                            <a href="#" class="services-item__link position-absolute"></a>
+                            <h3 class="services-item__title position-relative text-white">Юридические консультации</h3>
+                            <div class="services-item-decoration position-absolute">
+                                <a href="#" class="services-item-decoration__text position-absolute">Подробнее</a>
+                                <div class="wave position-absolute"></div>
+                                <div class="wave position-absolute"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 p-0">
+                        <div class="services-item position-relative" style="background-image: url('images/content/services/services-item-3.jpg');">
+                            <a href="#" class="services-item__link position-absolute"></a>
+                            <h3 class="services-item__title position-relative text-white">Консультации по специальному оборудованию</h3>
+                            <div class="services-item-decoration position-absolute">
+                                <a href="#" class="services-item-decoration__text position-absolute">Подробнее</a>
+                                <div class="wave position-absolute"></div>
+                                <div class="wave position-absolute"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="services-row services-row--mt d-flex flex-wrap">
+                    <div class="col-sm-4 p-0">
+                        <div class="services-item position-relative" style="background-image: url('images/content/services/services-item-4.jpg');">
+                            <a href="#" class="services-item__link position-absolute"></a>
+                            <h3 class="services-item__title position-relative text-white">Услуги клининговой компании</h3>
+                            <div class="services-item-decoration position-absolute">
+                                <a href="#" class="services-item-decoration__text position-absolute">Подробнее</a>
+                                <div class="wave position-absolute"></div>
+                                <div class="wave position-absolute"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 p-0">
+                        <div class="services-item services-item--center position-relative" style="background-image: url('images/content/services/services-item-5.jpg');">
+                            <a href="#" class="services-item__link position-absolute"></a>
+                            <h3 class="services-item__title position-relative text-white">Бытовые услуги</h3>
+                            <div class="services-item-decoration position-absolute">
+                                <a href="#" class="services-item-decoration__text position-absolute">Подробнее</a>
+                                <div class="wave position-absolute"></div>
+                                <div class="wave position-absolute"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 p-0">
+                        <div class="services-item position-relative" style="background-image: url('images/content/services/services-item-6.jpg');">
+                            <a href="#" class="services-item__link position-absolute"></a>
+                            <h3 class="services-item__title position-relative text-white">Маникюр, педикюр</h3>
+                            <div class="services-item-decoration position-absolute">
+                                <a href="#" class="services-item-decoration__text position-absolute">Подробнее</a>
+                                <div class="wave position-absolute"></div>
+                                <div class="wave position-absolute"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 mx-auto d-flex flex-column flex-sm-row align-items-center mt-5">
+                    <a href="#" class="btn btn-primary mb-4 mb-sm-0 mr-sm-5">заказать</a>
+                    <a href="#" class="btn btn-outline-primary text-primary px-3">проконсультироваться</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews">
+            <div class="container">
+                <div class="row">
+                    <h2 class="section-title pl-2 pl-sm-0 mb-5">Отзывы наших клиентов</h2>
+                </div>
+                <div class="reviews-slider position-relative">
+                    <div class="reviews-slider-item">
+                        <div class="reviews-slider-item__img position-absolute" style="background-image: url('images/content/reviews/reviews-item-1.jpg');"></div>
+                        <p class="reviews-slider-item__text m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida
+                            dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis
+                            natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla
+                            luctus pharetra vulputate.</p>
+                        <div class="reviews-slider-item__name text-white text-right position-relative">Валерия Иванова</div>
+                    </div>
+                    <div class="reviews-slider-item">
+                        <div class="reviews-slider-item__img position-absolute" style="background-image: url('images/content/reviews/reviews-item-1.jpg');"></div>
+                        <p class="reviews-slider-item__text m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida
+                            dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis
+                            natoque penatibus et.</p>
+                        <div class="reviews-slider-item__name text-white text-right position-relative">Валерия Иванова</div>
+                    </div>
+                    <div class="reviews-slider-item">
+                        <div class="reviews-slider-item__img position-absolute" style="background-image: url('images/content/reviews/reviews-item-1.jpg');"></div>
+                        <p class="reviews-slider-item__text m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida
+                            dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis
+                            natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla
+                            luctus pharetra vulputate. Et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum,
+                            nulla luctus pharetra vulputate.</p>
+                        <div class="reviews-slider-item__name text-white text-right position-relative">Валерия Иванова</div>
+                    </div>
+                </div>
+
+                <div class="reviews-slider-nav ml-auto position-relative">
+                    <div class="arrow d-flex">
+                        <div class="arrow-prev mr-3">
+                            <span class="arrow-text">Назад</span>
+                            <svg width="35" height="30" class="arrow-prev-icon">
+                                <use xlink:href="#arrow-icon"></use>
+                            </svg>
+                        </div>
+                        <div class="arrow-next">
+                            <svg width="35" height="30" class="arrow-next-icon">
+                                <use xlink:href="#arrow-icon"></use>
+                            </svg>
+                            <span class="arrow-text">Вперед</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="app-footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <div class="footer-contacts d-flex flex-column">
+                        <div class="footer-contacts-logo mb-5">
+                            <a href="#" class="logo">
+                                <img src="images/icon/logo-icon--footer.png" alt="logo">
+                            </a>
+                        </div>
+                        <div class="footer-contacts-item mb-4">
+                            <div class="footer-contacts-item__title mb-3">Адреса</div>
+                            <ul class="footer-contacts-item-list list-unstyled">
+                                <li class="footer-contacts-item-list__item text-white mb-3">г. Запорожье просп. Соборный 155 оф.2</li>
+                                <li class="footer-contacts-item-list__item text-white mb-3">г. Киев ул. Ивана Франка 12</li>
+                                <li class="footer-contacts-item-list__item text-white">г. Харьков просп. Тараса Шевченка 201</li>
+                            </ul>
+                        </div>
+                        <div class="footer-contacts-item mb-4">
+                            <div class="footer-contacts-item__title mb-3">Телефоны</div>
+                            <ul class="footer-contacts-item-list list-unstyled">
+                                <li class="footer-contacts-item-list__item text-white mb-3">+3 (050) 123 45 67</li>
+                                <li class="footer-contacts-item-list__item text-white mb-3">+3 (050) 123 45 67</li>
+                                <li class="footer-contacts-item-list__item text-white">+3 (050) 123 45 67</li>
+                            </ul>
+                        </div>
+                        <div class="footer-contacts-item">
+                            <div class="footer-contacts-item__title mb-3">Email</div>
+                            <ul class="footer-contacts-item-list list-unstyled">
+                                <li class="footer-contacts-item-list__item text-white">seder@gmail.com</li>
+                            </ul>
+                        </div>
+                        <div class="footer-contacts-item">
+                            <ul class="footer-social-list list-unstyled d-flex">
+                                <li class="footer-social-list-item mr-3">
+                                    <a href="#">
+                                        <svg width="25" height="25">
+                                            <use xlink:href="#facebook-icon"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="footer-social-list-item mr-3">
+                                    <a href="#">
+                                        <svg width="25" height="25">
+                                            <use xlink:href="#instagram-icon"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="footer-social-list-item">
+                                    <a href="#">
+                                        <svg width="25" height="25">
+                                            <use xlink:href="#youtube-icon"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="footer-form">
+                        <h2 class="section-title mb-5 text-white">Напишите нам</h2>
+
+                        <form action="#" id="form-feedback">
+                            <div class="form-group position-relative">
+                                <label for="user-name" class="label-placeholder position-absolute">Ваше имя</label>
+                                <input type="text" class="form-control position-relative" id="user-name">
+                            </div>
+                            <div class="form-group position-relative">
+                                <label for="email" class="label-placeholder position-absolute">E-mail</label>
+                                <input type="email" class="form-control position-relative" id="email">
+                            </div>
+                            <div class="form-group position-relative">
+                                <label for="user-phone" class="label-placeholder position-absolute">Телефон</label>
+                                <input type="text" class="form-control position-relative" id="user-phone">
+                            </div>
+                            <div class="form-group form-group--textarea position-relative">
+                                <label for="user-message" class="label-placeholder position-absolute">Введите сообщение</label>
+                                <textarea class="form-control position-relative" id="user-message" rows="2"></textarea>
+                            </div>
+                            <button class="btn btn-outline-primary text-white">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid p-0 mt-5">
+            <div class="footer-copyr text-center">
+                2018 Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Script -->
+    <script src="dist/app.js"></script>
+
+</body>
+
+</html>
