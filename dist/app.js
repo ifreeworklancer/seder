@@ -2066,7 +2066,6 @@ window.jQuery = window.$ = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a;
     $('.header-banner-item').addClass('animated zoomIn');
     $('.scroll-down').addClass('animated zoomIn');
     $('.header-banner-elena-img').addClass('animated slideInRight');
-    $('.header-banner-elena-description').addClass('animated slideInRight');
 
     var windowHeight = $(window).height();
 
